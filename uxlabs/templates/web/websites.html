@@ -1,0 +1,7 @@
+
+<h1>Websites</h1>
+
+{% for web in webs %}
+<h1>{{ web.nombre }}</h1>
+<div>{{ web.resumen|safe }}</div>
+{% endfor %}
