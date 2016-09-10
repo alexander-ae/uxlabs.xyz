@@ -19,3 +19,16 @@ class Web(models.Model):
 
     def __str__(self):
         return self.nombre
+
+
+class WebImagen(models.Model):
+    web = models.ForeignKey(Web, related_name='galeria')
+    titulo = models.CharField('Título', max_length=64)
+    imagen = models.ImageField('Imagen', upload_to='galeria')
+
+    class Meta:
+        verbose_name = 'Imagen'
+        verbose_name_plural = 'Galería'
+
+    def __str__(self):
+        return self.titulo
