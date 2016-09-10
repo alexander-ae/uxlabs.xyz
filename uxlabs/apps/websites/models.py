@@ -18,7 +18,7 @@ class Web(models.Model):
     enlace = models.URLField('Enlace', blank=True)
     fecha_de_revision = models.DateField('Fecha de revisión', blank=True, default=date.today)
     etiquetas = TaggableManager()
-    
+
     def __str__(self):
         return self.nombre
 
