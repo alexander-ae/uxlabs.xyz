@@ -37,9 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'taggit',
-    'apps.websites',
     'apps.info',
-
+    'apps.websites',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +56,9 @@ ROOT_URLCONF = 'uxlabs.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, 'templates')
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
