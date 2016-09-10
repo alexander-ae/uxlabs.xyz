@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Web
+from . import models
 
 
-admin.site.register(Web)
+admin.site.register(models.Categoria)
+admin.site.register(models.Web)
