@@ -1,5 +1,6 @@
-from django.db import models
 from datetime import date
+from django.db import models
+from taggit.managers import TaggableManager
 
 
 class Categoria(models.Model):
@@ -16,7 +17,8 @@ class Web(models.Model):
     detalle = models.TextField('Detalle', blank=True)
     enlace = models.URLField('Enlace', blank=True)
     fecha_de_revision = models.DateField('Fecha de revisión', blank=True, default=date.today)
-
+    etiquetas = TaggableManager()
+    
     def __str__(self):
         return self.nombre
 
