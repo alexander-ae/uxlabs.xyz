@@ -1,6 +1,21 @@
 
 <h1>Websites</h1>
 
+<div>
+    Categorías
+
+    <form action='#'>
+        <select name='categoria'>
+            <option value="">Todos</option>
+            {% for tmp_categoria in categorias %}
+                <option value='{{ tmp_categoria.nombre }}' {% if tmp_categoria.nombre == q_categoria %}selected{% endif %}>{{ tmp_categoria.nombre }}</option>
+            {% endfor %}
+        </select>
+
+        <input type='submit' value='Enviar'>
+    </form>
+</div>
+
 {% for web in webs %}
 <h1>{{ web.nombre }}</h1>
 <div>{{ web.resumen|safe }}</div>
