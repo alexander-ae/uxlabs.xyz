@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.template import RequestContext as ctx
 
 from .models import Web, Categoria
@@ -33,3 +33,12 @@ def websites(request):
     webs = webs.order_by('fecha_de_revision')
 
     return render(request, 'web/websites.html', locals())
+
+
+def detalle(request, slug):
+    """
+        Retorna el detalle de un website
+    """
+    web = get_object_or_404(Web, slug=slug)
+
+    return render(request, 'web/detalle.html', locals())

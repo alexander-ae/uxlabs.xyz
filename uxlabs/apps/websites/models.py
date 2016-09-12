@@ -1,6 +1,8 @@
 from datetime import date
 from django.db import models
+from django.urls import reverse
 from taggit.managers import TaggableManager
+from apps.core.models import SlugModel
 
 
 class Categoria(models.Model):
@@ -10,9 +12,8 @@ class Categoria(models.Model):
         return self.nombre
 
 
-class Web(models.Model):
+class Web(SlugModel):
     categoria = models.ManyToManyField(Categoria)
-    nombre = models.CharField('Nombre', max_length=64)
     resumen = models.TextField('Resumen', blank=True)
     detalle = models.TextField('Detalle', blank=True)
     enlace = models.URLField('Enlace', blank=True)
@@ -21,6 +22,9 @@ class Web(models.Model):
 
     def __str__(self):
         return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('detalle', kwargs={'slug': self.slug})
 
 
 class WebImagen(models.Model):
