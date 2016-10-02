@@ -1,0 +1,12 @@
+
+<h1>Contacto</h1>
+
+{% if form.is_valid %}
+    <p>Gracias por escribirnos, pronto lo contactaremos !</p>
+{% else %}
+    <form action='#' method="POST">
+    {%  csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit">
+    </form>
+{% endif %}
