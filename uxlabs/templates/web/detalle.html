@@ -10,5 +10,14 @@
 
     <h2>Enlace</h2>
     <div>{{ web.enlace }}</div>
+
+    <div>
+        <h2>Galería de imágenes</h2>
+
+        {% for imagen in web.galeria.all%}
+            <img src="{{ imagen.imagen.url }}" alt="{{ imagen.titulo }}" width='500'>
+        {% endfor %}
+
+    </div>
 </div>
 {% endblock content %}
