@@ -24,7 +24,7 @@ class Web(SlugModel):
         return self.nombre
 
     def get_absolute_url(self):
-        return reverse('detalle', kwargs={'slug': self.slug})
+        return reverse('websites:detalle', kwargs={'slug': self.slug})
 
 
 class WebImagen(models.Model):

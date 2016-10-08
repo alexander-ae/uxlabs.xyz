@@ -1,7 +1,11 @@
+{% extends 'common/_base.html' %}
+
+{% block content %}
 
 <h1>Home</h1>
 
 {% for web in webs %}
-<h1>{{ web.nombre }}</h1>
-<div>{{ web.resumen|safe }}</div>
+    <h1>{{ web.nombre }}</h1>
+    <div>{{ web.resumen|safe }}</div>
 {% endfor %}
+{% endblock content %}

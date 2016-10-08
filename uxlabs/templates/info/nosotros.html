@@ -1,3 +1,6 @@
+{% extends 'common/_base.html' %}
+
+{% block content %}
 <h1>Nosotros</h1>
 
 {% for seccion in secciones %}
@@ -5,3 +8,4 @@
     <div>{{ seccion.detalle }}</div>
 {% endfor %}
 
+{% endblock content %}
