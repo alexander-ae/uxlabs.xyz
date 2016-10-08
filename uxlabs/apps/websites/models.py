@@ -1,8 +1,12 @@
 from datetime import date
+
 from django.db import models
 from django.urls import reverse
+
 from taggit.managers import TaggableManager
-from apps.core.models import SlugModel
+from colorfield.fields import ColorField
+
+from apps.core.models import PositionModel, SlugModel
 
 
 class Categoria(models.Model):
@@ -38,3 +42,15 @@ class WebImagen(models.Model):
 
     def __str__(self):
         return self.titulo
+
+
+class WebColor(PositionModel):
+    web = models.ForeignKey(Web, related_name='paleta_de_colores')
+    color = ColorField(default='#FFFFFF')
+
+    class Meta:
+        verbose_name = 'Color'
+        verbose_name_plural = 'Paleta de colores'
+
+    def __unicode__(self):
+        return self.color
