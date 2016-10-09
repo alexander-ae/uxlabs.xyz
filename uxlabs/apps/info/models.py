@@ -14,3 +14,16 @@ class SeccionNosotros(PositionModel):
 
     def __str__(self):
         return self.titulo
+
+
+class SeccionLegal(PositionModel):
+    titulo = models.CharField('Título', max_length=64)
+    detalle = models.TextField('Detalle')
+
+    class Meta:
+        verbose_name = 'Bloque de sección Lega'
+        verbose_name_plural = 'Sección Legal'
+        ordering = ['position']
+
+    def __str__(self):
+        return self.titulo
