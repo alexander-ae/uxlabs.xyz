@@ -4,7 +4,7 @@
 <h1>Websites</h1>
 
 <div>
-    Categorías
+    <span>Categorías</span>
 
     <form action='#'>
         <select name='categoria'>
@@ -18,9 +18,15 @@
     </form>
 </div>
 
-{% for web in webs %}
-<h1><a href="{{ web.get_absolute_url }}">{{ web.nombre }}</a></h1>
-<div>{{ web.resumen|safe }}</div>
+{% for web in lista_webs.object_list %}
+    <h1><a href='{{ web.get_absolute_url }}'>{{ web.nombre }}</a></h1>
+    <div>{{ web.resumen|safe }}</div>
 {% endfor %}
 
+
+<!-- paginación -->
+
+<div id="pagination">
+    {{ lista_webs.render }}
+</div>
 {% endblock content %}

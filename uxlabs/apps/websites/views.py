@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.template import RequestContext as ctx
+from pure_pagination import Paginator
 
 from .models import Web, Categoria
 
@@ -15,9 +15,16 @@ def websites(request):
     """
         Retorna la lista de websites
     """
+    WEBS_POR_PAGINA = 12
     webs = Web.objects.all()
 
+    # parámetros GET
     q_categoria = request.GET.get('categoria', '').strip()
+
+    try:
+        page = int(request.GET.get('page', 1))
+    except ValueError:
+        page = 1
 
     categorias = Categoria.objects.all()
 
@@ -31,6 +38,11 @@ def websites(request):
             webs = webs.filter(categoria=categoria)
 
     webs = webs.order_by('fecha_de_revision')
+
+    # paginacion
+    p = Paginator(webs, WEBS_POR_PAGINA, request=request)
+    lista_webs = p.page(page)
+
 
     return render(request, 'web/websites.html', locals())
 
