@@ -18,6 +18,15 @@
     </form>
 </div>
 
+<div>
+    <span>Buscador</span>
+    <form action='{% url "websites:websites" %}'>
+        <input name='q' type="search" placeholder='Ingrese el término de búsqueda' {% if q %} value='{{ q }}'{% endif %}>
+        <input type='submit' value='Buscar'>
+        <span>Ingrese al menos 3 caracteres</span>
+    </form>
+</div>
+
 {% for web in lista_webs.object_list %}
     <h1><a href='{{ web.get_absolute_url }}'>{{ web.nombre }}</a></h1>
     <div>{{ web.resumen|safe }}</div>

@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
+
 from pure_pagination import Paginator
 
 from .models import Web, Categoria
@@ -20,6 +22,7 @@ def websites(request):
 
     # parámetros GET
     q_categoria = request.GET.get('categoria', '').strip()
+    q = request.GET.get('q', '')
 
     try:
         page = int(request.GET.get('page', 1))
@@ -36,6 +39,12 @@ def websites(request):
 
         if categoria:
             webs = webs.filter(categoria=categoria)
+
+    # búsqueda
+    if q and len(q) > 2:
+        q1 = Q(nombre__icontains=q)
+        q2 = Q(detalle__icontains=q)
+        webs = webs.filter(q1 | q2 )
 
     webs = webs.order_by('fecha_de_revision')
 
