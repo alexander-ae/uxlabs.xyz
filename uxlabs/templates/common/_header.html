@@ -1,4 +1,10 @@
+{% load static %}
 <header>
+    <div class="logo">
+        <a href="{% url 'websites:home' %}">
+            <img src='{% static "img/logo.png" %}' alt="logo uxlabs" width="256">
+        </a>
+    </div>
     <nav>
         <ul>
             <li><a href="{% url 'websites:home' %}">UXlabs</a></li>
