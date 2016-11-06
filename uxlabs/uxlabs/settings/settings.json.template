@@ -1,7 +1,7 @@
 {
-    "DB_NAME": "gruvel",
-    "DB_USER": "postgres",
-    "DB_PASSWORD": "daniel",
+    "DB_NAME": "uxlabs",
+    "DB_USER": "uxlabs",
+    "DB_PASSWORD": "uxlabs",
 
     "URL_SITE": "http://127.0.0.1:8000",
     "SECRET_KEY": "=^_1@5%5nw+fy9xmv^(i+^m3)g0+mc!=0q)7=c80pc!dl1du=k",

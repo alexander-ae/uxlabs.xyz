@@ -2,7 +2,8 @@
 import os
 from uxlabs.util import get_env
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 
 ENV = get_env(BASE_DIR)
 # Quick-start development settings - unsuitable for production
@@ -18,28 +19,20 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-DJANGO_APPS = [
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
-
-THIRD_PARTY_APPS = [
     'taggit',
     'colorfield',
     'pure_pagination',
-]
-
-LOCAL_APPS = [
     'apps.contacts',
     'apps.info',
     'apps.websites',
 ]
-
-INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 
 MIDDLEWARE = [
