@@ -1,4 +1,60 @@
+{% load static %}
 <footer>
-    <hr>
-    Algunos derechos reservados 2016
+    <div class='footer_container columns'>
+        <figure class='col-2 copy'>
+            <img clasS='logo' src='{% static "img/isotipo.png" %}' alt='isotipo uxlabs'>
+            <figcaption>uxlabs - 2016</figcaption>
+        </figure>
+
+        <div class='col-2'>
+            <h3>INFORMACIÓN</h3>
+            <ul>
+                <li class='nav-link'><a href="">nosotros</a></li>
+                <li class='nav-link'><a href="">proceso de selección</a></li>
+                <li class='nav-link'><a href="">términos legales</a></li>
+                <li class='nav-link'><a href="">contáctanos</a></li>
+            </ul>
+        </div>
+
+        <nav class="col-2">
+            <h3>GALERÍA</h3>
+            <ul>
+                <li class='nav-link'><a href="">categorías</a></li>
+                <li class='nav-link'><a ref="">etiquetas</a></li>
+                <li class='nav-link'><a href="">colores</a></li>
+            </ul>
+        </nav>
+
+        <nav class="form_suscripcion col-3">
+            <h3>SUSCRÍBETE</h3>
+
+            <input class='form_control' type='email' placeholder='anakin@skywalker.com'>
+            <button class='btn btn_1' type='submit'>suscríbeme!</button>
+            <p>recibe las últimas novedades.
+            <br>nada de spam, lo prometemos !</p>
+        </nav>
+
+        <div class='col-3'>
+            <span>también estamos en:</span>
+
+            <div class='social'>
+                <img src='{% static "img/icon_mail.png" %}' alt='icon email' class='icon' width='32' height='32'>
+                <img src='{% static "img/icon_twitter.png" %}' alt='icon twitter' class='icon' width='32' height='32'>
+                <img src='{% static "img/icon_github.png" %}' alt='icon github' class='icon' width='32' height='32'>
+                <img src='{% static "img/icon_rss.png" %}' alt='icon rss' class='icon' width='32' height='32'>
+            </div>
+
+            <div class='social_2'>
+                <figure class='col-6'>
+                    <figcaption>made in</figcaption>
+                    <img src='{% static "img/icon_peru.png" %}' alt="bandera del peru" height='24' width='36'>
+                </figure>
+
+                <figure class="col-6">
+                    <figcaption>powered by</figcaption>
+                    <img src='{% static "img/logo_django_200.png" %}' alt="logo django" height='24' width='58'>
+                </figure>
+            </div>
+        </div>
+    </div>
 </footer>

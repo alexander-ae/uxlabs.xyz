@@ -6,6 +6,7 @@ reset-html5()
 
 @import 'constants.styl'
 @import 'typo.styl'
+@import 'grid.styl'
 @import 'base.styl'
 
 header
@@ -33,7 +34,6 @@ header
 
   .nav-link
     color $color_2
-    text-decoration none
     font-size 1.5rem
     font_primary()
     font-weight bold
@@ -41,11 +41,87 @@ header
     &:hover
       border-bottom 2px solid $color_3
 
-  .search
+  .block-search
     column(2/12)
+    position relative
+    height 32px
+    margin-top 20px
+
+    img
+      position absolute
+      top 4px
+      right 10px
 
     input
       width 100%
-      height 32px
-      margin-top 20px
+      height inherit
+
       margin-right 5px
+      border 4px solid #ffffff
+      font-size 1.2rem
+
+      &::placeholder
+        color $color_1
+
+footer
+  background $color_1
+  padding 40px 40px 20px
+  color $color_5
+  font-size .9rem
+
+  .footer_container
+    center(960px)
+
+  .copy
+    font-size .8rem
+    color $color_4
+
+    figcaption
+      text-align center
+
+    .logo
+      display block
+      margin 0 auto 8px
+      width 60px
+
+  h3
+    margin-bottom 10px
+
+  h3,
+  ul
+    font-secondary()
+    font-weight bold
+    font-size 1rem
+    color $color_5
+
+  .nav-link
+    margin-bottom 0.8rem
+    font-size .9rem
+
+    a:hover
+      color $color_3
+
+  .form_suscripcion
+    .btn
+      margin .75rem 0
+
+    p
+      color $color_4
+      line-height 1.2
+
+  .social
+    margin 10px 0 20px
+    clearfix()
+
+    .icon
+      float left
+      margin-right 10px
+
+  .social_2
+    font-size .9rem
+
+    figcaption
+      margin-bottom .5rem
+
+    img
+      margin-left 5px

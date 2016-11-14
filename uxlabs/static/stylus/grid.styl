@@ -1,0 +1,15 @@
+.columns
+  for n in 1..12
+    .col-{n}
+      column(n/12)
+
+  &::after
+    clear both
+    content: '';
+    display table
+
+.clear
+  &::after
+    clear both
+    content: '';
+    display table
