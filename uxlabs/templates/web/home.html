@@ -1,8 +1,38 @@
 {% extends 'common/_base.html' %}
+{% load static %}
+{% load thumbnail %}
+
+{% block classbody %}home{% endblock classbody %}
 
 {% block content %}
 
-<h1>Home</h1>
+<h1 class='main_descripcion'>Navega y encuentra websites que brindan una buena experiencia para el usuario</h1>
+
+<blockquote class='main_quote'>"Piensa más, diseña menos" - Ellen Lupton</blockquote>
+
+<section class='destacado'>
+    <div class="columns">
+        <div class='col-6'>
+            {% thumbnail destacado.main_img.imagen '480x360' crop='top' as im %}
+                <img src='{{ im.url }}' alt='destacado - {{ destacado.nombre }}'>
+            {% endthumbnail %}
+
+        </div>
+
+        <div class='col-6'>
+            <div class='header'>
+                <h2>DESTACADO DEL DÍA</h2>
+                <time datetime="{{ destacado.fecha_de_revision }}">{{ destacado.fecha_de_revision }}</time>
+            </div>
+
+            <div class='titulo'>{{ destacado.nombre }}</div>
+
+            <div class='resumen'>
+                {{ destacado.resumen }}
+            </div>
+        </div>
+    </div>
+</section>
 
 {% for web in webs %}
     <h1>{{ web.nombre }}</h1>

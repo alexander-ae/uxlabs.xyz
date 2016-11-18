@@ -8,6 +8,7 @@ from .models import Web, Categoria
 
 def home(request):
     PAGINACION = 6
+    destacado = Web.objects.all().order_by('fecha_de_revision').first()
     webs = Web.objects.all().order_by('fecha_de_revision')[:PAGINACION]
 
     return render(request, 'web/home.html', locals())

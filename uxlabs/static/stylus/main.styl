@@ -8,6 +8,7 @@ reset-html5()
 @import 'typo.styl'
 @import 'grid.styl'
 @import 'base.styl'
+@import 'blocks/*'
 
 header
   width 100%
@@ -30,13 +31,13 @@ header
 
     li
       margin-bottom 5px
-      margin-right 2rem
+      margin-right 1.6rem
 
   .nav-link
     color $color_2
-    font-size 1.5rem
+    font-size 1.4rem
     font_primary()
-    font-weight bold
+    font-weight 600
 
     &:hover
       border-bottom 2px solid $color_3
@@ -86,11 +87,11 @@ footer
 
   h3
     margin-bottom 10px
+    font-weight bold
 
   h3,
   ul
-    font-secondary()
-    font-weight bold
+    font_secondary()
     font-size 1rem
     color $color_5
 

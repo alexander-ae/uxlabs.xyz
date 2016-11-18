@@ -30,6 +30,10 @@ class Web(SlugModel):
     def get_absolute_url(self):
         return reverse('websites:detalle', kwargs={'slug': self.slug})
 
+    def main_img(self):
+        ''' Imagen principal '''
+        return self.galeria.all().first()
+
 
 class WebImagen(models.Model):
     web = models.ForeignKey(Web, related_name='galeria')
